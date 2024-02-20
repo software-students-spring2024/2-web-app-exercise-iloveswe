@@ -13,4 +13,5 @@ See instructions. Delete this line and place the Product Vision Statement here.
 ## Task boards
 
 [Sprint 1](https://github.com/orgs/software-students-spring2024/projects/2)
+[Sprint 2](https://github.com/orgs/software-students-spring2024/projects/3)
 
