@@ -6,7 +6,9 @@
     "batch_size": 32
   },
   "stock_data": {
+    "ticker": "AAPL",
     "dates": ["2020-01-01", "2020-01-02", ...],
-    "prices": [100, 101, ...]
+    "open_prices": [100, 102, ...],
+    "close_prices": [101, 103, ...]
   }
 }
