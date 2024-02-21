@@ -41,7 +41,26 @@ def preprocess_data(stock_data, model_type):
 # Common Postprocessing Function
 def postprocess_prediction(prediction, scaler):
     return scaler.inverse_transform(prediction)
-
+    
+def handle_lstm(stock_data, parameters):
+    # Preprocess stock_data for LSTM (not shown for brevity)
+    # You need to convert stock_data to a format suitable for LSTM (e.g., sequences)
+    X_train, y_train = preprocess_for_lstm(stock_data)
+    
+    # Extract LSTM-specific parameters
+    learning_rate = parameters.get('learning_rate', 0.001)
+    epochs = parameters.get('epochs', 100)
+    batch_size = parameters.get('batch_size', 32)
+    
+    # Train the LSTM model
+    model, model_history = create_and_train_lstm_model(X_train, y_train, learning_rate, epochs, batch_size)
+    
+    # Optionally, save the trained model and make predictions
+    # model.save('my_lstm_model.h5')
+    # predictions = model.predict(X_test)
+    
+    # Here, we return the loss history for simplicity
+    return model_history.history['loss']
 # ARIMA Handler
 def handle_arima(data, parameters):
     # Example: Unpack parameters and apply
