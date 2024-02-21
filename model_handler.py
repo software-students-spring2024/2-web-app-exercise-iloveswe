@@ -8,6 +8,18 @@ from keras.optimizers import Adam
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 import pandas as pd
+from lstm_model_manager import handle_lstm_prediction
+
+def get_prediction(model_type, stock_data, parameters):
+    if model_type == 'LSTM':
+        # Call the LSTM handler
+        return handle_lstm_prediction(stock_data, parameters)
+    elif model_type == 'ARIMA':
+        # Assuming ARIMA handling is defined here
+        return handle_arima(stock_data, parameters)
+    # Add more model types as elif conditions
+    else:
+        raise ValueError("Unsupported model type")
 
 # Common Preprocessing Function
 def preprocess_data(stock_data, model_type):
