@@ -359,4 +359,4 @@ zstandard = {file = "../../../../ec2-user/ci_py311_2/zstandard_1679338593428/wor
 [dev-packages]
 
 [requires]
-python_version = "3.11"
+python_version = "3"
