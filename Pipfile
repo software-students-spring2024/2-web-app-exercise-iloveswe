@@ -1,0 +1,362 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aiobotocore = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b3e4znaej2/croot/aiobotocore_1680004294920/work"}
+aiofiles = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_0ar7qj9rcj/croot/aiofiles_1683773588297/work"}
+aiohttp = {file = "../../../../ec2-user/ci_py311/aiohttp_1678323186748/work"}
+aioitertools = {file = "../../../../../private/tmp/build/80754af9/aioitertools_1607109665762/work"}
+aiosignal = {file = "../../../../../private/tmp/build/80754af9/aiosignal_1637843061372/work"}
+aiosqlite = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_13w97vul7u/croot/aiosqlite_1683773912122/work"}
+alabaster = {file = "../../../../../System/Volumes/Data/home/ktietz/src/ci/alabaster_1611921544520/work"}
+anaconda-catalogs = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_737qok84ed/croot/anaconda-catalogs_1685727302903/work"}
+anaconda-client = "==1.12.0"
+anaconda-navigator = "==2.4.2"
+anaconda-project = {file = "../../../../ec2-user/ci_py311/anaconda-project_1678395481364/work"}
+anyio = {file = "../../../../ec2-user/ci_py311/anyio_1678317412955/work/dist"}
+appdirs = "==1.4.4"
+applaunchservices = {file = "../../../../ec2-user/ci_py311/applaunchservices_1678390181983/work"}
+appnope = {file = "../../../../ec2-user/ci_py311/appnope_1678317440516/work"}
+appscript = {file = "../../../../ec2-user/ci_py311/appscript_1678390203562/work"}
+argon2-cffi = {file = "../../../../../opt/conda/conda-bld/argon2-cffi_1645000214183/work"}
+argon2-cffi-bindings = {file = "../../../../ec2-user/ci_py311/argon2-cffi-bindings_1678317076583/work"}
+arrow = {file = "../../../../ec2-user/ci_py311/arrow_1678325845580/work"}
+astroid = {file = "../../../../ec2-user/ci_py311/astroid_1678323235198/work"}
+astropy = {file = "../../../../ec2-user/ci_py311_2/astropy_1679335070862/work"}
+asttokens = {file = "../../../../../opt/conda/conda-bld/asttokens_1646925590279/work"}
+async-timeout = {file = "../../../../ec2-user/ci_py311/async-timeout_1678320112070/work"}
+atomicwrites = "==1.4.0"
+attrs = {file = "../../../../ec2-user/ci_py311/attrs_1678315289647/work"}
+automat = {file = "../../../../../private/tmp/build/80754af9/automat_1600298431173/work"}
+autopep8 = {file = "../../../../../opt/conda/conda-bld/autopep8_1650463822033/work"}
+babel = {file = "../../../../ec2-user/ci_py311/babel_1678318085010/work"}
+backcall = {file = "../../../../../System/Volumes/Data/home/ktietz/src/ci/backcall_1611930011877/work"}
+"backports.functools-lru-cache" = {file = "../../../../../private/tmp/build/80754af9/backports.functools_lru_cache_1618170165463/work"}
+"backports.tempfile" = {file = "../../../../../System/Volumes/Data/home/linux1/recipes/ci/backports.tempfile_1610991236607/work"}
+"backports.weakref" = "==1.0.post1"
+bcrypt = {file = "../../../../ec2-user/ci_py311/bcrypt_1678325873219/work"}
+beautifulsoup4 = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_bczxn9gqkq/croot/beautifulsoup4-split_1681493044307/work"}
+binaryornot = {file = "../../../../../private/tmp/build/80754af9/binaryornot_1617751525010/work"}
+black = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_1f1pcodmuo/croot/black_1680737253550/work"}
+bleach = {file = "../../../../../opt/conda/conda-bld/bleach_1641577558959/work"}
+bokeh = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_258ryuohc7/croot/bokeh_1690546089457/work"}
+boltons = {file = "../../../../ec2-user/ci_py311/boltons_1678396074811/work"}
+boto3 = {file = "../../../../ec2-user/ci_py311_2/boto3_1679335351182/work"}
+botocore = {file = "../../../../ec2-user/ci_py311/botocore_1678320133200/work"}
+bottleneck = {file = "../../../../ec2-user/ci_py311/bottleneck_1678322312632/work"}
+brotlipy = "==0.7.0"
+certifi = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_2emnmf1qow/croot/certifi_1690232232440/work/certifi"}
+cffi = {file = "../../../../ec2-user/ci_py311/cffi_1678315312775/work"}
+chardet = {file = "../../../../ec2-user/ci_py311/chardet_1678326102860/work"}
+charset-normalizer = {file = "../../../../../private/tmp/build/80754af9/charset-normalizer_1630003229654/work"}
+click = {file = "../../../../ec2-user/ci_py311/click_1678318124837/work"}
+cloudpickle = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_c57ujq_pgm/croot/cloudpickle_1683040025620/work"}
+clyent = "==1.2.2"
+colorama = {file = "../../../../ec2-user/ci_py311/colorama_1678320227414/work"}
+colorcet = {file = "../../../../ec2-user/ci_py311/colorcet_1678380145131/work"}
+comm = {file = "../../../../ec2-user/ci_py311/comm_1678317779525/work"}
+conda = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_15is8atfpa/croot/conda_1690494976487/work"}
+conda-build = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_c8poihhv7b/croot/conda-build_1690381796903/work"}
+conda-content-trust = {file = "../../../../../private/tmp/build/80754af9/conda-content-trust_1617045594566/work"}
+conda-libmamba-solver = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b7jucd8kvj/croot/conda-libmamba-solver_1685032330942/work/src"}
+conda-pack = {file = "../../../../../private/tmp/build/80754af9/conda-pack_1611163042455/work"}
+conda-package-handling = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_99vcqjo8cf/croot/conda-package-handling_1690999935230/work"}
+conda-repo-cli = "==1.0.41"
+conda-token = {file = "../../../../paulyim/miniconda3/envs/c3i/conda-bld/conda-token_1662660369760/work"}
+conda-verify = "==3.4.2"
+conda-index = {file = "../../../../ec2-user/ci_py311/conda-index_1678409305677/work"}
+conda-package-streaming = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_d5wg6eonuu/croot/conda-package-streaming_1690987980119/work"}
+constantly = "==15.1.0"
+contourpy = {file = "../../../../ec2-user/ci_py311/contourpy_1678322361099/work"}
+cookiecutter = {file = "../../../../../opt/conda/conda-bld/cookiecutter_1649151442564/work"}
+cryptography = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_e2pplk40z3/croot/cryptography_1689373680118/work"}
+cssselect = "==1.1.0"
+cycler = {file = "../../../../../private/tmp/build/80754af9/cycler_1637851556182/work"}
+cytoolz = {file = "../../../../ec2-user/ci_py311/cytoolz_1678326214370/work"}
+dask = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_ccdxmmxbox/croot/dask-core_1686782920612/work"}
+datashader = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_2bt39ljus7/croot/datashader_1689603656595/work"}
+datashape = "==0.5.4"
+debugpy = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_30hp2nowkm/croot/debugpy_1690905056188/work"}
+decorator = {file = "../../../../../opt/conda/conda-bld/decorator_1643638310831/work"}
+defusedxml = {file = "../../../../../private/tmp/build/80754af9/defusedxml_1615228127516/work"}
+diff-match-patch = {file = "../../../../ktietz/demo/mc3/conda-bld/diff-match-patch_1630511840874/work"}
+dill = {file = "../../../../ec2-user/ci_py311/dill_1678323290904/work"}
+distributed = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_95i88jlqtp/croot/distributed_1686866052419/work"}
+docstring-to-markdown = {file = "../../../../ec2-user/ci_py311/docstring-to-markdown_1678326320721/work"}
+docutils = {file = "../../../../ec2-user/ci_py311/docutils_1678316143314/work"}
+entrypoints = {file = "../../../../ec2-user/ci_py311/entrypoints_1678316169365/work"}
+et-xmlfile = "==1.1.0"
+executing = {file = "../../../../../opt/conda/conda-bld/executing_1646925071911/work"}
+fastjsonschema = {file = "../../../../ec2-user/ci_py311_2/python-fastjsonschema_1679338737111/work"}
+filelock = {file = "../../../../ec2-user/ci_py311/filelock_1678318171955/work"}
+flake8 = {file = "../../../../ec2-user/ci_py311/flake8_1678326404511/work"}
+flask = {file = "../../../../ec2-user/ci_py311/flask_1678380788105/work"}
+fonttools = "==4.25.0"
+frozenlist = {file = "../../../../ec2-user/ci_py311/frozenlist_1678318685088/work"}
+fsspec = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_d9zxascxg8/croot/fsspec_1679418997424/work"}
+future = {file = "../../../../ec2-user/ci_py311_2/future_1679335881731/work"}
+gensim = {file = "../../../../ec2-user/ci_py311/gensim_1678412014794/work"}
+glob2 = {file = "../../../../../System/Volumes/Data/home/linux1/recipes/ci/glob2_1610991677669/work"}
+gmpy2 = {file = "../../../../ec2-user/ci_py311/gmpy2_1678380831980/work"}
+greenlet = {file = "../../../../ec2-user/ci_py311/greenlet_1678323340336/work"}
+h5py = {file = "../../../../ec2-user/ci_py311/h5py_1678381005308/work"}
+heapdict = {file = "../../../../ktietz/demo/mc3/conda-bld/heapdict_1630598515714/work"}
+holoviews = {file = "../../../../../private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_09ko1kp4pg/croot/holoviews_1690477584050/work"}
+hvplot = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_4dben4g_th/croot/hvplot_1685998195310/work"}
+hyperlink = {file = "../../../../../private/tmp/build/80754af9/hyperlink_1610130746837/work"}
+idna = {file = "../../../../ec2-user/ci_py311/idna_1678315819133/work"}
+imagecodecs = {file = "../../../../ec2-user/ci_py311_2/imagecodecs_1679336141260/work"}
+imageio = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_47v6nbs3l9/croot/imageio_1687264946242/work"}
+imagesize = {file = "../../../../ec2-user/ci_py311/imagesize_1678377399148/work"}
+imbalanced-learn = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_a1ju_tsc7c/croot/imbalanced-learn_1685020900729/work"}
+importlib-metadata = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_81_20mq0d8/croot/importlib-metadata_1678997090664/work"}
+incremental = {file = "../../../../../private/tmp/build/80754af9/incremental_1636629750599/work"}
+inflection = "==0.5.1"
+iniconfig = {file = "../../../../../System/Volumes/Data/home/linux1/recipes/ci/iniconfig_1610983019677/work"}
+intake = {file = "../../../../ec2-user/ci_py311_2/intake_1679336302724/work"}
+intervaltree = {file = "../../../../ktietz/demo/mc3/conda-bld/intervaltree_1630511889664/work"}
+ipykernel = {file = "../../../../ec2-user/ci_py311/ipykernel_1678318220696/work"}
+ipython = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_cd4ia5pr17/croot/ipython_1680701875298/work"}
+ipython-genutils = {file = "../../../../../private/tmp/build/80754af9/ipython_genutils_1606773439826/work"}
+ipywidgets = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_f5atknkudc/croot/ipywidgets_1679394812720/work"}
+isort = {file = "../../../../../private/tmp/build/80754af9/isort_1628603791788/work"}
+itemadapter = {file = "../../../../../private/tmp/build/80754af9/itemadapter_1626442940632/work"}
+itemloaders = {file = "../../../../../opt/conda/conda-bld/itemloaders_1646805235997/work"}
+itsdangerous = {file = "../../../../../private/tmp/build/80754af9/itsdangerous_1621432558163/work"}
+"jaraco.classes" = {file = "../../../../../private/tmp/build/80754af9/jaraco.classes_1620983179379/work"}
+jedi = {file = "../../../../ec2-user/ci_py311_2/jedi_1679336327335/work"}
+jellyfish = {file = "../../../../ec2-user/ci_py311/jellyfish_1678392216202/work"}
+jinja2 = {file = "../../../../ec2-user/ci_py311/jinja2_1678317138271/work"}
+jinja2-time = {file = "../../../../../opt/conda/conda-bld/jinja2-time_1649251842261/work"}
+jmespath = {file = "../../../../ktietz/demo/mc3/conda-bld/jmespath_1630583964805/work"}
+joblib = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_dfriz0qjwt/croot/joblib_1685113297703/work"}
+json5 = {file = "../../../../../private/tmp/build/80754af9/json5_1624432770122/work"}
+jsonpatch = {file = "../../../../../private/tmp/build/80754af9/jsonpatch_1615747632069/work"}
+jsonpointer = "==2.1"
+jsonschema = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_f9p98o1kqf/croot/jsonschema_1678983430226/work"}
+jupyter = {file = "../../../../ec2-user/ci_py311/jupyter_1678377791770/work"}
+jupyter-console = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_e8qcp1kdie/croot/jupyter_console_1679999714867/work"}
+jupyter-events = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_f0yqwpn5u1/croot/jupyter_events_1684268046871/work"}
+jupyter-server = {file = "../../../../ec2-user/ci_py311/jupyter_server_1678317903958/work"}
+jupyter-ydoc = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_79b9hk1z3q/croot/jupyter_ydoc_1683747244664/work"}
+jupyter-client = {file = "../../../../ec2-user/ci_py311/jupyter_client_1678316948346/work"}
+jupyter-core = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b82fz_h369/croot/jupyter_core_1679906581737/work"}
+jupyter-server-fileid = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b0lffopjbp/croot/jupyter_server_fileid_1684273621123/work"}
+jupyter-server-ydoc = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_6848h2a_93/croot/jupyter_server_ydoc_1686768718335/work"}
+jupyterlab = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_502x016ek3/croot/jupyterlab_1686179671461/work"}
+jupyterlab-pygments = {file = "../../../../../private/tmp/build/80754af9/jupyterlab_pygments_1601490720602/work"}
+jupyterlab-widgets = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_9btffb27id/croot/jupyterlab_widgets_1679055288818/work"}
+jupyterlab-server = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_9039tf6tpv/croot/jupyterlab_server_1680792539169/work"}
+keyring = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_2ds0bchnl2/croot/keyring_1678999223818/work"}
+kiwisolver = {file = "../../../../ec2-user/ci_py311/kiwisolver_1678322457192/work"}
+lazy-object-proxy = {file = "../../../../ec2-user/ci_py311/lazy-object-proxy_1678322504286/work"}
+lazy-loader = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_02apt1h75k/croot/lazy_loader_1687264081288/work"}
+libarchive-c = {file = "../../../../../private/tmp/build/80754af9/python-libarchive-c_1617780486945/work"}
+libmambapy = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_65seb320zf/croot/mamba-split_1680093070986/work/libmambapy"}
+linkify-it-py = {file = "../../../../ec2-user/ci_py311/linkify-it-py_1678413480728/work"}
+llvmlite = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_39tj5og13d/croot/llvmlite_1683555130919/work"}
+lmdb = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_88zbo0vn66/croot/python-lmdb_1682522360781/work"}
+locket = {file = "../../../../ec2-user/ci_py311/locket_1678322541585/work"}
+lxml = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_cccmd60j4n/croot/lxml_1679646460589/work"}
+lz4 = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_7fl2lzb5wh/croot/lz4_1686057901919/work"}
+markdown = {file = "../../../../ec2-user/ci_py311/markdown_1678377870854/work"}
+markdown-it-py = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_43xjt6hz0x/croot/markdown-it-py_1684279911135/work"}
+markupsafe = {file = "../../../../ec2-user/ci_py311/markupsafe_1678316973889/work"}
+matplotlib = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_41fhwn4tj9/croot/matplotlib-suite_1679593479845/work"}
+matplotlib-inline = {file = "../../../../ec2-user/ci_py311/matplotlib-inline_1678317544666/work"}
+mccabe = {file = "../../../../../opt/conda/conda-bld/mccabe_1644221741721/work"}
+mdit-py-plugins = {file = "../../../../ec2-user/ci_py311/mdit-py-plugins_1678417716573/work"}
+mdurl = {file = "../../../../ec2-user/ci_py311/mdurl_1678381820326/work"}
+mistune = {file = "../../../../ec2-user/ci_py311/mistune_1678317272228/work"}
+more-itertools = {file = "../../../../../private/tmp/build/80754af9/more-itertools_1637733554872/work"}
+mpmath = {file = "../../../../../private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_8fyoqwupl2/croot/mpmath_1690848275746/work"}
+msgpack = {file = "../../../../ec2-user/ci_py311/msgpack-python_1678318264150/work"}
+multidict = {file = "../../../../ec2-user/ci_py311/multidict_1678318765630/work"}
+multipledispatch = {file = "../../../../ec2-user/ci_py311/multipledispatch_1678392901644/work"}
+munkres = "==1.1.4"
+mypy-extensions = "==0.4.3"
+navigator-updater = "==0.4.0"
+nbclassic = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_e9be4uk5qu/croot/nbclassic_1681756175065/work"}
+nbclient = {file = "../../../../ec2-user/ci_py311/nbclient_1678317300721/work"}
+nbconvert = {file = "../../../../ec2-user/ci_py311/nbconvert_1678317567483/work"}
+nbformat = {file = "../../../../ec2-user/ci_py311/nbformat_1678317010390/work"}
+nest-asyncio = {file = "../../../../ec2-user/ci_py311/nest-asyncio_1678316288195/work"}
+networkx = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_666p3uavvu/croot/networkx_1690562005807/work"}
+nltk = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_3dn6s26pv5/croot/nltk_1688114157897/work"}
+notebook = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_e3bsub1nom/croot/notebook_1690984822307/work"}
+notebook-shim = {file = "../../../../ec2-user/ci_py311/notebook-shim_1678318293647/work"}
+numba = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_93pzbiav_e/croot/numba_1684245526578/work"}
+numexpr = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_1b50c1js9s/croot/numexpr_1683227065029/work"}
+numpy = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_bdk7p7tnsw/croot/numpy_and_numpy_base_1682520579379/work"}
+numpydoc = {file = "../../../../ec2-user/ci_py311/numpydoc_1678393034712/work"}
+openpyxl = "==3.0.10"
+packaging = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_c3zlhpboab/croot/packaging_1678965318579/work"}
+pandas = "==1.5.3"
+pandocfilters = {file = "../../../../../opt/conda/conda-bld/pandocfilters_1643405455980/work"}
+panel = {file = "../../../../../private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_ce8y4rielh/croot/panel_1690822218628/work"}
+param = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_eb_xu6rgzh/croot/param_1684915322419/work"}
+parsel = {file = "../../../../ec2-user/ci_py311/parsel_1678382184303/work"}
+parso = {file = "../../../../../opt/conda/conda-bld/parso_1641458642106/work"}
+partd = {file = "../../../../../opt/conda/conda-bld/partd_1647245470509/work"}
+pathlib = {file = "../../../../ktietz/demo/mc3/conda-bld/pathlib_1629713961906/work"}
+pathspec = {file = "../../../../ec2-user/ci_py311_2/pathspec_1679337122817/work"}
+patsy = "==0.5.3"
+pep8 = "==1.7.1"
+pexpect = {file = "../../../../../private/tmp/build/80754af9/pexpect_1605563209008/work"}
+pickleshare = {file = "../../../../../private/tmp/build/80754af9/pickleshare_1606932040724/work"}
+pillow = "==9.4.0"
+pkginfo = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_d976p03z5u/croot/pkginfo_1679431175529/work"}
+platformdirs = {file = "../../../../ec2-user/ci_py311/platformdirs_1678315988118/work"}
+plotly = {file = "../../../../ec2-user/ci_py311/plotly_1678382250051/work"}
+pluggy = {file = "../../../../ec2-user/ci_py311/pluggy_1678315400971/work"}
+ply = "==3.11"
+pooch = {file = "../../../../../private/tmp/build/80754af9/pooch_1623324770023/work"}
+poyo = {file = "../../../../../private/tmp/build/80754af9/poyo_1617751526755/work"}
+prometheus-client = {file = "../../../../ec2-user/ci_py311_2/prometheus_client_1679340232148/work"}
+prompt-toolkit = {file = "../../../../ec2-user/ci_py311/prompt-toolkit_1678317707969/work"}
+protego = {file = "../../../../../private/tmp/build/80754af9/protego_1598657180827/work"}
+psutil = {file = "../../../../ec2-user/ci_py311_2/psutil_1679337242143/work"}
+ptyprocess = {file = "../../../../../private/tmp/build/80754af9/ptyprocess_1609355006118/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl"}
+pure-eval = {file = "../../../../../opt/conda/conda-bld/pure_eval_1646925070566/work"}
+py-cpuinfo = {file = "../../../../ktietz/demo/mc3/conda-bld/py-cpuinfo_1629480366017/work"}
+pyarrow = "==11.0.0"
+pyasn1 = {file = "../../../../ktietz/demo/mc3/conda-bld/pyasn1_1629708007385/work"}
+pyasn1-modules = "==0.2.8"
+pycodestyle = {file = "../../../../ec2-user/ci_py311/pycodestyle_1678324331308/work"}
+pycosat = {file = "../../../../ec2-user/ci_py311/pycosat_1678378899646/work"}
+pycparser = {file = "../../../../../private/tmp/build/80754af9/pycparser_1636541352034/work"}
+pyct = {file = "../../../../ec2-user/ci_py311/pyct_1678378955854/work"}
+pycurl = "==7.45.2"
+pydispatcher = "==2.0.5"
+pydocstyle = {file = "../../../../ec2-user/ci_py311/pydocstyle_1678378981125/work"}
+pyerfa = {file = "../../../../ec2-user/ci_py311/pyerfa_1678379006730/work"}
+pyflakes = {file = "../../../../ec2-user/ci_py311/pyflakes_1678324357242/work"}
+pygments = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_cflayrfqsi/croot/pygments_1684279981084/work"}
+pyjwt = {file = "../../../../ec2-user/ci_py311/pyjwt_1678379090382/work"}
+pylint = {file = "../../../../ec2-user/ci_py311/pylint_1678379112162/work"}
+pylint-venv = {file = "../../../../ec2-user/ci_py311/pylint-venv_1678393629931/work"}
+pyls-spyder = "==0.4.0"
+pyobjc-core = {file = "../../../../ec2-user/ci_py311/pyobjc-core_1678375734970/work"}
+pyobjc-framework-cocoa = {file = "../../../../ec2-user/ci_py311/pyobjc-framework-cocoa_1678375905004/work"}
+pyobjc-framework-coreservices = {file = "../../../../ec2-user/ci_py311/pyobjc-framework-coreservices_1678383123980/work"}
+pyobjc-framework-fsevents = {file = "../../../../ec2-user/ci_py311/pyobjc-framework-fsevents_1678379139559/work"}
+pyodbc = {file = "../../../../ec2-user/ci_py311/pyodbc_1678420730897/work"}
+pyopenssl = {file = "../../../../../private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_7fwdg30481/croot/pyopenssl_1690223429070/work"}
+pyparsing = {file = "../../../../ec2-user/ci_py311/pyparsing_1678322828710/work"}
+pyqt5-sip = "==12.11.0"
+pyrsistent = {file = "../../../../ec2-user/ci_py311/pyrsistent_1678316053523/work"}
+pysocks = {file = "../../../../ec2-user/ci_py311/pysocks_1678315868424/work"}
+pytest = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_7089yk6bfu/croot/pytest_1690474697638/work"}
+python-dateutil = {file = "../../../../../private/tmp/build/80754af9/python-dateutil_1626374649649/work"}
+python-json-logger = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_49p5x2bjzn/croot/python-json-logger_1683823814668/work"}
+python-lsp-black = {file = "../../../../ec2-user/ci_py311/python-lsp-black_1678393907972/work"}
+python-lsp-jsonrpc = "==1.0.0"
+python-lsp-server = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_1fkjjx0yhx/croot/python-lsp-server_1681930400163/work"}
+python-slugify = {file = "../../../../../private/tmp/build/80754af9/python-slugify_1620405669636/work"}
+python-snappy = {file = "../../../../ec2-user/ci_py311/python-snappy_1678388765172/work"}
+pytoolconfig = {file = "../../../../ec2-user/ci_py311/pytoolconfig_1678324412360/work"}
+pytz = {file = "../../../../ec2-user/ci_py311/pytz_1678318034461/work"}
+pyviz-comms = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_13yvjs0iia/croot/pyviz_comms_1685030724461/work"}
+pywavelets = {file = "../../../../ec2-user/ci_py311/pywavelets_1678379192795/work"}
+pyyaml = {file = "../../../../ec2-user/ci_py311/pyyaml_1678324445670/work"}
+pyzmq = {file = "../../../../ec2-user/ci_py311/pyzmq_1678316754714/work"}
+qdarkstyle = {file = "../../../../../private/tmp/build/80754af9/qdarkstyle_1617386714626/work"}
+qstylizer = {file = "../../../../ec2-user/ci_py311/qstylizer_1678393978214/work/dist/qstylizer-0.2.2-py2.py3-none-any.whl"}
+qtawesome = {file = "../../../../ec2-user/ci_py311/qtawesome_1678393953815/work"}
+qtconsole = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_dexq2hi2gu/croot/qtconsole_1681394223590/work"}
+qtpy = {file = "../../../../ec2-user/ci_py311/qtpy_1678322936834/work"}
+queuelib = "==1.5.0"
+regex = {file = "../../../../ec2-user/ci_py311/regex_1678394018661/work"}
+requests = {file = "../../../../../private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_fa2zrx4csg/croot/requests_1690400223595/work"}
+requests-file = {file = "../../../../ktietz/demo/mc3/conda-bld/requests-file_1629455781986/work"}
+requests-toolbelt = {file = "../../../../../private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_d4z1wb6cpk/croot/requests-toolbelt_1690874009769/work"}
+rfc3339-validator = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_07a1ken4gz/croot/rfc3339-validator_1683077050666/work"}
+rfc3986-validator = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_6dzvsqx89i/croot/rfc3986-validator_1683059150431/work"}
+rope = {file = "../../../../ec2-user/ci_py311/rope_1678379265159/work"}
+rtree = {file = "../../../../ec2-user/ci_py311/rtree_1678394103092/work"}
+ruamel-yaml-conda = {file = "../../../../ec2-user/ci_py311/ruamel_yaml_1678394125333/work"}
+"ruamel.yaml" = {file = "../../../../ec2-user/ci_py311/ruamel.yaml_1678379291841/work"}
+s3fs = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_3dy0qlp99f/croot/s3fs_1680018510125/work"}
+s3transfer = {file = "../../../../ec2-user/ci_py311/s3transfer_1678324574832/work"}
+sacremoses = {file = "../../../../../private/tmp/build/80754af9/sacremoses_1633107328213/work"}
+scikit-image = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_3fh5dyitqb/croot/scikit-image_1682530834592/work"}
+scikit-learn = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_c1cbgsrq20/croot/scikit-learn_1690978919468/work"}
+scipy = "==1.10.1"
+scrapy = {file = "../../../../ec2-user/ci_py311/scrapy_1678422467931/work"}
+seaborn = {file = "../../../../ec2-user/ci_py311/seaborn_1678394152964/work"}
+send2trash = {file = "../../../../../private/tmp/build/80754af9/send2trash_1632406701022/work"}
+service-identity = {file = "../../../../ktietz/demo/mc3/conda-bld/service_identity_1629460757137/work"}
+sip = {file = "../../../../ec2-user/ci_py311/sip_1678318421743/work"}
+six = {file = "../../../../../private/tmp/build/80754af9/six_1644875935023/work"}
+smart-open = {file = "../../../../ec2-user/ci_py311/smart_open_1678389689993/work"}
+sniffio = {file = "../../../../ec2-user/ci_py311/sniffio_1678317345022/work"}
+snowballstemmer = {file = "../../../../../private/tmp/build/80754af9/snowballstemmer_1637937080595/work"}
+sortedcontainers = {file = "../../../../../private/tmp/build/80754af9/sortedcontainers_1623949099177/work"}
+soupsieve = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_a42j8ggi70/croot/soupsieve_1680518482618/work"}
+sphinx = {file = "../../../../ec2-user/ci_py311/sphinx_1678389735529/work"}
+sphinxcontrib-applehelp = {file = "../../../../../System/Volumes/Data/home/ktietz/src/ci/sphinxcontrib-applehelp_1611920841464/work"}
+sphinxcontrib-devhelp = {file = "../../../../../System/Volumes/Data/home/ktietz/src/ci/sphinxcontrib-devhelp_1611920923094/work"}
+sphinxcontrib-htmlhelp = {file = "../../../../../private/tmp/build/80754af9/sphinxcontrib-htmlhelp_1623945626792/work"}
+sphinxcontrib-jsmath = {file = "../../../../../System/Volumes/Data/home/ktietz/src/ci/sphinxcontrib-jsmath_1611920942228/work"}
+sphinxcontrib-qthelp = {file = "../../../../../System/Volumes/Data/home/ktietz/src/ci/sphinxcontrib-qthelp_1611921055322/work"}
+sphinxcontrib-serializinghtml = {file = "../../../../../private/tmp/build/80754af9/sphinxcontrib-serializinghtml_1624451540180/work"}
+spyder = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b93e0at0ak/croot/spyder_1681934083239/work"}
+spyder-kernels = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_30ws3nleek/croot/spyder-kernels_1681307303955/work"}
+sqlalchemy = {file = "../../../../ec2-user/ci_py311/sqlalchemy_1678379321154/work"}
+stack-data = {file = "../../../../../opt/conda/conda-bld/stack_data_1646927590127/work"}
+statsmodels = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_6ceh3qgte0/croot/statsmodels_1689937269297/work"}
+sympy = {file = "../../../../ec2-user/ci_py311_2/sympy_1679338337660/work"}
+tables = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_ccbzs9wm7e/croot/pytables_1685123223946/work"}
+tabulate = {file = "../../../../ec2-user/ci_py311/tabulate_1678423547338/work"}
+tbb = "==0.2"
+tblib = {file = "../../../../ktietz/demo/mc3/conda-bld/tblib_1629402031467/work"}
+tenacity = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_cct5tq4h70/croot/tenacity_1682972283326/work"}
+terminado = {file = "../../../../ec2-user/ci_py311/terminado_1678317735543/work"}
+text-unidecode = {file = "../../../../ktietz/demo/mc3/conda-bld/text-unidecode_1629401354553/work"}
+textdistance = {file = "../../../../../private/tmp/build/80754af9/textdistance_1612461398012/work"}
+threadpoolctl = {file = "../../../../ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work"}
+three-merge = {file = "../../../../../private/tmp/build/80754af9/three-merge_1607553261110/work"}
+tifffile = {file = "../../../../../private/tmp/build/80754af9/tifffile_1627275862826/work"}
+tinycss2 = {file = "../../../../ec2-user/ci_py311/tinycss2_1678317366076/work"}
+tldextract = {file = "../../../../../opt/conda/conda-bld/tldextract_1646638314385/work"}
+toml = {file = "../../../../../private/tmp/build/80754af9/toml_1616166611790/work"}
+tomlkit = {file = "../../../../ec2-user/ci_py311/tomlkit_1678317388739/work"}
+toolz = {file = "../../../../ec2-user/ci_py311/toolz_1678323009669/work"}
+tornado = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_aeotsmw12l/croot/tornado_1690848274212/work"}
+tqdm = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_03acd6t6ca/croot/tqdm_1679561866522/work"}
+traitlets = {file = "../../../../ec2-user/ci_py311/traitlets_1678316097905/work"}
+transformers = {file = "../../../../../private/tmp/build/80754af9/transformers_1633098115425/work"}
+twisted = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_3cf4rqmb9n/croot/twisted_1683796897214/work"}
+typing-extensions = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_35a9251r5y/croot/typing_extensions_1690297487409/work"}
+uc-micro-py = {file = "../../../../ec2-user/ci_py311/uc-micro-py_1678394873457/work"}
+ujson = {file = "../../../../ec2-user/ci_py311/ujson_1678325349324/work"}
+unidecode = {file = "../../../../../private/tmp/build/80754af9/unidecode_1614712377438/work"}
+urllib3 = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_1968zekhce/croot/urllib3_1686163172153/work"}
+w3lib = {file = "../../../../ktietz/demo/mc3/conda-bld/w3lib_1629359764703/work"}
+watchdog = {file = "../../../../ec2-user/ci_py311/watchdog_1678395046770/work"}
+wcwidth = {file = "../../../../ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work"}
+webencodings = "==0.5.1"
+websocket-client = {file = "../../../../ec2-user/ci_py311/websocket-client_1678317758506/work"}
+werkzeug = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_fegt3z60s3/croot/werkzeug_1679489762631/work"}
+whatthepatch = {file = "../../../../ec2-user/ci_py311/whatthepatch_1678379478749/work"}
+widgetsnbextension = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_8feupjw2ld/croot/widgetsnbextension_1679313870305/work"}
+wrapt = {file = "../../../../ec2-user/ci_py311/wrapt_1678323111850/work"}
+wurlitzer = {file = "../../../../ec2-user/ci_py311/wurlitzer_1678390004531/work"}
+xarray = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_ba3w2rvoxd/croot/xarray_1689041477488/work"}
+xlwings = {file = "../../../../ec2-user/ci_py311_2/xlwings_1679338568565/work"}
+xyzservices = {file = "../../../../ec2-user/ci_py311/xyzservices_1678325391212/work"}
+y-py = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_7dvnlnkj12/croot/y-py_1683555629284/work"}
+yapf = {file = "../../../../../private/tmp/build/80754af9/yapf_1615749224965/work"}
+yarl = {file = "../../../../ec2-user/ci_py311/yarl_1678323149735/work"}
+ypy-websocket = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_75t89iv95n/croot/ypy-websocket_1684171758794/work"}
+zict = {file = "../../../../../private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_59schmcson/croot/zict_1682698747213/work"}
+zipp = {file = "../../../../ec2-user/ci_py311/zipp_1678318061389/work"}
+"zope.interface" = {file = "../../../../ec2-user/ci_py311/zope.interface_1678379536727/work"}
+zstandard = {file = "../../../../ec2-user/ci_py311_2/zstandard_1679338593428/work"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

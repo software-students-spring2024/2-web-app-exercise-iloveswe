@@ -5,7 +5,7 @@ from statsmodels.tsa.arima.model import ARIMA
 from keras.models import Sequential, load_model
 from keras.layers import Dense, LSTM, Dropout
 from keras.optimizers import Adam
-from sklearn.preprocessing import MinMaxScaler
+#from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 import pandas as pd
 
