@@ -1,0 +1,66 @@
+# model_handlers.py
+
+# Import necessary libraries
+from statsmodels.tsa.arima.model import ARIMA
+from keras.models import Sequential, load_model
+from keras.layers import Dense, LSTM, Dropout
+from keras.optimizers import Adam
+from sklearn.preprocessing import MinMaxScaler
+import numpy as np
+import pandas as pd
+
+# Common Preprocessing Function
+def preprocess_data(stock_data, model_type):
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    if model_type in ['ARIMA', 'ARO', 'GARCH']:
+        # For simplicity, using close prices
+        scaled_data = scaler.fit_transform(stock_data[['Close']])
+        return scaled_data, scaler
+    elif model_type == 'CNN':
+        # Assuming CNN expects sequences - adjust as necessary
+        # This is a placeholder for actual preprocessing needed for a CNN
+        scaled_data = scaler.fit_transform(stock_data[['Close']])
+        # Further processing to create sequences as needed
+        return scaled_data.reshape(-1, 1, 1), scaler
+    # Extend for other models
+    else:
+        raise ValueError("Model type not supported")
+
+# Common Postprocessing Function
+def postprocess_prediction(prediction, scaler):
+    return scaler.inverse_transform(prediction)
+
+# ARIMA Handler
+def handle_arima(data, parameters):
+    # Example: Unpack parameters and apply
+    order = (parameters.get('p', 1), parameters.get('d', 1), parameters.get('q', 1))
+    model = ARIMA(data, order=order)
+    model_fit = model.fit()
+    forecast = model_fit.forecast(steps=5)
+    return forecast
+
+# CNN Handler
+def handle_cnn(data, parameters, model_path):
+    model = load_model(model_path)
+    # Example: Adjust learning rate and loss function based on parameters
+    optimizer = Adam(learning_rate=parameters.get('learning_rate', 0.001))
+    model.compile(optimizer=optimizer, loss=parameters.get('loss', 'mean_squared_error'))
+    # Assume data is already preprocessed and ready for prediction
+    prediction = model.predict(data)
+    return prediction
+
+# Add more handlers for ARO, GARCH, and any other models as needed
+
+# Example function to dynamically select the handler based on model_type
+def get_prediction(model_type, data, parameters):
+    if model_type == 'ARIMA':
+        processed_data, scaler = preprocess_data(data, model_type)
+        prediction = handle_arima(processed_data, parameters)
+    elif model_type == 'CNN':
+        processed_data, scaler = preprocess_data(data, model_type)
+        prediction = handle_cnn(processed_data, parameters, 'path_to_your_cnn_model.h5')
+    # Extend for other model types
+    else:
+        return {"error": "Model type not supported"}
+    
+    return postprocess_prediction(prediction, scaler)
