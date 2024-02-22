@@ -1,9 +1,12 @@
 import os
-from flask import Flask, request, jsonify
-import pandas as pd
-from model_handlers import get_prediction
-import pymongo
 from dotenv import load_dotenv
+from flask import Flask, render_template, request, redirect, abort, url_for, make_response, jsonify
+import pymongo
+from bson.objectid import ObjectId
+import datetime 
+import pandas as pd
+# Import the function to handle model predictions
+from model_handler import get_prediction
 
 app = Flask(__name__)
 
@@ -19,6 +22,48 @@ except Exception as e:
     # the ping command failed, so the connection is not available.
     print(" * MongoDB connection error:", e)
 
+@app.route('/')
+def home():
+    """
+    Route for the home page
+    """
+    return render_template("index.html")
+    
+@app.route('/profile')
+def profile():
+    """
+    Route for the profile page
+    """
+    return render_template("profile.html")
+
+@app.route('/csvs')
+def csvs():
+    """
+    Route for GET requests to the csvs page
+    Shows a user's csvs
+    """
+    return render_template("csvs.html")
+
+@app.route('/editcsv/<post_id>')
+def edit_csv(post_id):
+    """
+    Route for GET requests to the edit_csv page
+    Displays a table of CSV data where users can edit or delete the CSV
+    """
+    #doc = db.csv.find_one({"_id"} ObjectId(post_id))
+    doc = post_id
+    return render_template("edit_csv.html", doc=doc)
+
+@app.route('/model/<post_id>')
+def model(post_id):
+    """
+    Route for GET requests to the model page
+    Displays the model info
+    """
+    #doc = db.model.find_one({"_id"} ObjectId(post_id))
+    doc = post_id
+    return render_template("model.html", doc=doc)
+    
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -37,6 +82,13 @@ def predict():
         return jsonify({"success": True, "prediction": prediction_response})
     except Exception as e:
         return jsonify({"success": False, "error": str(e)})
+    
+@app.route('/about')
+def about():
+    """
+    Route for the about page
+    """
+    return render_template("about.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
