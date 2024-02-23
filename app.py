@@ -28,6 +28,13 @@ def home():
     Route for the home page
     """
     return render_template("index.html")
+
+@app.route('/register')
+def register():
+    """
+    Route for the user registration page
+    """
+    return render_template("register.html")
     
 @app.route('/profile')
 def profile():
