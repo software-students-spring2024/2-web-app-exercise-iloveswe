@@ -35,7 +35,14 @@ def register():
     Route for the user registration page
     """
     return render_template("register.html")
-    
+
+@app.route('/login')
+def login():
+    """
+    Route for login
+    """   
+    return render_template("login.html") 
+
 @app.route('/profile')
 def profile():
     """
