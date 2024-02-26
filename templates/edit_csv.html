@@ -1,3 +1,4 @@
+{% extends "layout.html" %} {% block content %}
 <div id="CSVTable">Your CSV</div>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -8,3 +9,4 @@
     $("#CSVTable").CSVToTable("your_csv.csv");
   });
 </script>
+{% endblock %}

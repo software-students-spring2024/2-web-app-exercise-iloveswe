@@ -1,19 +1,29 @@
 import os
 from dotenv import load_dotenv
-from flask import Flask, render_template, request, redirect, abort, url_for, make_response, jsonify
+from flask import Flask, render_template, request, redirect, abort, url_for, make_response, jsonify, flash
+from flask_login import login_user, LoginManager, current_user, login_required, logout_user
 import pymongo
 from bson.objectid import ObjectId
 import datetime 
 import pandas as pd
+import bcrypt
+import pprint
 # Import the function to handle model predictions
 from model_handler import get_prediction
+# import user mode
+from User import *
 
 app = Flask(__name__)
+app.secret_key = b'iloveswe'
+
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 # Connect to the MongoDB server using environment variables 
 load_dotenv()
 connection = pymongo.MongoClient(os.getenv('MONGO_URI'))
 db = connection[os.getenv('MONGO_DBNAME')]
+users = db.users
 try:
     # verify the connection works by pinging the database
     connection.admin.command("ping")  
@@ -22,19 +32,99 @@ except Exception as e:
     # the ping command failed, so the connection is not available.
     print(" * MongoDB connection error:", e)
 
+@login_manager.user_loader
+def load_user(user_id):
+    user = User.get_by_id(user_id)
+    return user
+
 @app.route('/')
 def home():
     """
     Route for the home page
     """
     return render_template("index.html")
+
+@app.route('/register')
+def register():
+    """
+    Route for the user registration page
+    """
+    return render_template("register.html")
+
+@app.route('/register', methods=['POST'])
+def register_post():
+    """
+    Route for the handling POST requests from the registration page
+    """
+    # get req data
+    email = request.form.get('email')
+    name = request.form.get('name')
+    password = request.form.get('password')
+
+    #user = users.find_one({"email": email})
+    user = User.get_by_email(email)
+
+    if(user):
+        # user already exists in db
+        flash('Email address already exists')
+        return redirect('/register')
+
+    # create new user and add to db
+    hashed_pw = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt(12))
+    User.register(email, name, hashed_pw)
+    pprint.pprint(users.find_one({"email": email}))
     
+    return redirect("/login")
+
+@app.route('/login')
+def login():
+    """
+    Route for login
+    """   
+    return render_template("login.html")  
+
+@app.route('/login', methods=['POST'])
+def login_post():
+    """
+    Route for the handling POST requests from the login page
+    """
+    # get req data
+    email = request.form.get('email')
+    password = request.form.get('password')
+    remember = True if request.form.get('remember') else False
+
+    if(not User.login_valid(email, password)):
+        flash('Please check your login details and try again')
+        return redirect('/login')
+
+    # user login is successful
+    user = User.get_by_email(email)
+    pprint.pprint(users.find_one({"email": email}))
+    res = login_user(user, remember=remember)
+    if(res):
+        print("Login Successful")
+        return redirect("/profile")
+    else:
+        flash('Please check your login details and try again')
+        return redirect('/login')
+
+@app.route('/logout')
+@login_required
+def logout():
+    """
+    Route for logging out
+    """   
+    logout_user()
+    return redirect("/") 
+
+
 @app.route('/profile')
+@login_required
 def profile():
     """
     Route for the profile page
     """
-    return render_template("profile.html")
+    return render_template("profile.html", name=current_user.name)
 
 @app.route('/csvs')
 def csvs():
