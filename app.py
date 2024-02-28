@@ -24,6 +24,7 @@ load_dotenv()
 connection = pymongo.MongoClient(os.getenv('MONGO_URI'))
 db = connection[os.getenv('MONGO_DBNAME')]
 users = db.users
+strategies_docs = db.strategies
 try:
     # verify the connection works by pinging the database
     connection.admin.command("ping")  
@@ -186,9 +187,24 @@ def model_post(model_id):
     buy = request.form.get('buy')
     hold = request.form.get('hold')
     sell = request.form.get('sell')
+    strategy = {"buy": buy, "hold": hold, "sell": sell}
     print(buy,hold,sell)
     #doc = db.model.find_one({"_id"} ObjectId(post_id))
     doc = model_id
+
+    strategy_id = strategies_docs.insert_one(strategy).inserted_id
+    user_email = current_user.email
+    user = db.users.find_one({"email": user_email})
+    print(user)
+    try:
+        user.strategies.append(strategy_id)
+        result = users.update_one({"_id": user["_id"]}, {"$set": {"Strategies": user["strategies"]}})
+        print(result)
+    except AttributeError:
+        user["strategies"] = [strategy_id]
+        result = users.update_one({"_id": user["_id"]}, {"$set": {"Strategies": user["strategies"]}})
+        print(result)
+
     return redirect("/model/"+model_id)
 
 @app.route('/predict', methods=['POST'])
