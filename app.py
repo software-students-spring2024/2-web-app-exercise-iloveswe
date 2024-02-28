@@ -133,7 +133,19 @@ def strategies():
     Route for GET requests to the strategies page
     Shows a user's strategies
     """
-    return render_template("strategies.html")
+    user_email = current_user.email
+    user = db.users.find_one({"email": user_email})
+    print(user)
+    strats = []
+    try:
+        strategy_ids = user["strategies"]
+        for e in strategy_ids:
+            strat = db.strategies.find_one({"_id": e})
+            strats.append(strat)
+    except:
+        print('No strats')
+    
+    return render_template("strategies.html", strategies = strats)
 
 @app.route('/strategies/<strategy_id>')
 def strategy(strategy_id):
@@ -197,12 +209,12 @@ def model_post(model_id):
     user = db.users.find_one({"email": user_email})
     print(user)
     try:
-        user.strategies.append(strategy_id)
-        result = users.update_one({"_id": user["_id"]}, {"$set": {"Strategies": user["strategies"]}})
+        user["strategies"].append(strategy_id)
+        result = users.update_one({"_id": user["_id"]}, {"$set": {"strategies": user["strategies"]}})
         print(result)
-    except AttributeError:
+    except:
         user["strategies"] = [strategy_id]
-        result = users.update_one({"_id": user["_id"]}, {"$set": {"Strategies": user["strategies"]}})
+        result = users.update_one({"_id": user["_id"]}, {"$set": {"strategies": user["strategies"]}})
         print(result)
 
     return redirect("/model/"+model_id)

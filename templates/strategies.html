@@ -1,5 +1,8 @@
 {% extends "layout.html" %} {% block content %}
 <body>
   <p>Your Strategies:</p>
+  {% for strategy in strategies %}
+  <h3>{{ strategy._id }}</h3>
+  {% endfor %}
 </body>
 {% endblock %}
