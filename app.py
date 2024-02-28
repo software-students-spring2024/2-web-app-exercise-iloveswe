@@ -171,10 +171,11 @@ def edit_strategy_post(strategy_id):
     Route for POST requests to a strategy page
     """
     # get req data
+    strat_name = request.form.get('strategy-name')
     buy = request.form.get('buy')
     hold = request.form.get('hold')
     sell = request.form.get('sell')
-    print(buy,hold,sell)
+    print(strat_name,buy,hold,sell)
     #doc = db.csv.find_one({"_id"} ObjectId(strategy_id))
     doc = strategy_id
     return redirect("/strategies/"+strategy_id)
@@ -196,11 +197,12 @@ def model_post(model_id):
     Route for POST requests to the model page
     """
     # get req data
+    strat_name = request.form.get('strategy-name')
     buy = request.form.get('buy')
     hold = request.form.get('hold')
     sell = request.form.get('sell')
-    strategy = {"buy": buy, "hold": hold, "sell": sell}
-    print(buy,hold,sell)
+    strategy = {"name": strat_name, "buy": buy, "hold": hold, "sell": sell}
+    print(strat_name,buy,hold,sell)
     #doc = db.model.find_one({"_id"} ObjectId(post_id))
     doc = model_id
 
