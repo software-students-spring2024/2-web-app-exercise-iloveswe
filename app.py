@@ -147,14 +147,14 @@ def strategies():
     
     return render_template("strategies.html", strategies = strats)
 
-@app.route('/strategies/<strategy_id>')
-def strategy(strategy_id):
+@app.route('/strategy/<strat_id>')
+def strategy(strat_id):
     """
     Route for GET requests to a strategy page
     """
-    #doc = db.csv.find_one({"_id"} ObjectId(post_id))
-    doc = strategy_id
-    return render_template("strategy.html", doc=doc)
+    strat = db.strategies.find_one({"_id": ObjectId(strat_id)})
+    print(strat)
+    return render_template("strategy.html", strat=strat)
 
 @app.route('/edit-strategy/<strategy_id>')
 def edit_strategy(strategy_id):

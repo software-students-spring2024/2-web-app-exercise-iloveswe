@@ -2,7 +2,9 @@
 <body>
   <p>Your Strategies:</p>
   {% for strategy in strategies %}
-  <h3>{{ strategy.name }}</h3>
+  <a href="{{ url_for('strategy', strat_id=strategy._id) }}"
+    >{{ strategy.name }}</a
+  >
   {% endfor %}
 </body>
 {% endblock %}
