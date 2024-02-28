@@ -126,34 +126,70 @@ def profile():
     """
     return render_template("profile.html", name=current_user.name)
 
-@app.route('/csvs')
-def csvs():
+@app.route('/strategies')
+def strategies():
     """
-    Route for GET requests to the csvs page
-    Shows a user's csvs
+    Route for GET requests to the strategies page
+    Shows a user's strategies
     """
-    return render_template("csvs.html")
+    return render_template("strategies.html")
 
-@app.route('/editcsv/<post_id>')
-def edit_csv(post_id):
+@app.route('/strategies/<strategy_id>')
+def strategy(strategy_id):
     """
-    Route for GET requests to the edit_csv page
-    Displays a table of CSV data where users can edit or delete the CSV
+    Route for GET requests to a strategy page
     """
     #doc = db.csv.find_one({"_id"} ObjectId(post_id))
-    doc = post_id
-    return render_template("edit_csv.html", doc=doc)
+    doc = strategy_id
+    return render_template("strategy.html", doc=doc)
 
-@app.route('/model/<post_id>')
-def model(post_id):
+@app.route('/edit-strategy/<strategy_id>')
+def edit_strategy(strategy_id):
+    """
+    Route for GET requests to an edit-strategy page
+    """
+    #doc = db.csv.find_one({"_id"} ObjectId(post_id))
+    doc = strategy_id
+    return render_template("edit_strategy.html", doc=doc)
+
+@app.route('/edit-strategy/<strategy_id>', methods=['POST'])
+def edit_strategy_post(strategy_id):
+    """
+    Route for POST requests to a strategy page
+    """
+    # get req data
+    buy = request.form.get('buy')
+    hold = request.form.get('hold')
+    sell = request.form.get('sell')
+    print(buy,hold,sell)
+    #doc = db.csv.find_one({"_id"} ObjectId(strategy_id))
+    doc = strategy_id
+    return redirect("/strategies/"+strategy_id)
+
+@app.route('/model/<model_id>')
+def model(model_id):
     """
     Route for GET requests to the model page
     Displays the model info
     """
     #doc = db.model.find_one({"_id"} ObjectId(post_id))
-    doc = post_id
+    doc = model_id
     return render_template("model.html", doc=doc)
     
+
+@app.route('/model/<model_id>', methods=['POST'])
+def model_post(model_id):
+    """
+    Route for POST requests to the model page
+    """
+    # get req data
+    buy = request.form.get('buy')
+    hold = request.form.get('hold')
+    sell = request.form.get('sell')
+    print(buy,hold,sell)
+    #doc = db.model.find_one({"_id"} ObjectId(post_id))
+    doc = model_id
+    return redirect("/model/"+model_id)
 
 @app.route('/predict', methods=['POST'])
 def predict():
