@@ -1,17 +1,11 @@
 {% extends "layout.html" %} {% block content %}
-<body>
-  <p>Model Placeholder</p>
-
-  {% with messages = get_flashed_messages() %} {% if messages %}
-  <ul class="flashes">
-    {% for message in messages %}
-    <li>{{ message }}</li>
-    {% endfor %}
-  </ul>
-  {% endif %} {% endwith %}
-  <h3 class="title">Create Strategy</h3>
+<div class="column is-4 is-offset-4">
+  <h3 class="title">Edit Strategy</h3>
   <div class="box">
-    <form method="POST" action="{{ url_for('model', model_id=doc) }}">
+    <form
+      method="POST"
+      action="{{ url_for('edit_strategy', strat_id=strat._id) }}"
+    >
       <div class="field">
         <div class="control">
           <input
@@ -19,6 +13,7 @@
             type="text"
             name="strategy-name"
             placeholder="Strategy Name"
+            value="{{ strat.name }}"
             autofocus=""
           />
         </div>
@@ -30,6 +25,7 @@
             type="text"
             name="buy"
             placeholder="Buy"
+            value="{{ strat.buy }}"
             autofocus=""
           />
         </div>
@@ -42,6 +38,7 @@
             type="text"
             name="hold"
             placeholder="Hold"
+            value="{{ strat.hold }}"
             autofocus=""
           />
         </div>
@@ -54,15 +51,25 @@
             type="text"
             name="sell"
             placeholder="Sell"
+            value="{{ strat.sell }}"
           />
         </div>
       </div>
 
       <button class="button is-block is-info is-large is-fullwidth">
-        Create Strategy
+        Edit Strategy
       </button>
     </form>
   </div>
-</body>
-
+  <div class="box">
+    <form
+      method="POST"
+      action="{{ url_for('delete_strategy', strat_id=strat._id) }}"
+    >
+      <button class="button is-block is-info is-large is-fullwidth">
+        Delete Strategy
+      </button>
+    </form>
+  </div>
+</div>
 {% endblock %}

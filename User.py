@@ -17,7 +17,7 @@ users = db.users
 
 class User(UserMixin):
 
-    def __init__(self, email, name, password, _id):
+    def __init__(self, email, name, password, _id, strategies=None):
 
         self.email = email
         self.name = name
