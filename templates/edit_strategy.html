@@ -4,7 +4,7 @@
   <div class="box">
     <form
       method="POST"
-      action="{{ url_for('edit_strategy', strategy_id=doc) }}"
+      action="{{ url_for('edit_strategy', strat_id=strat._id) }}"
     >
       <div class="field">
         <div class="control">
@@ -13,6 +13,7 @@
             type="text"
             name="strategy-name"
             placeholder="Strategy Name"
+            value="{{ strat.name }}"
             autofocus=""
           />
         </div>
@@ -24,6 +25,7 @@
             type="text"
             name="buy"
             placeholder="Buy"
+            value="{{ strat.buy }}"
             autofocus=""
           />
         </div>
@@ -36,6 +38,7 @@
             type="text"
             name="hold"
             placeholder="Hold"
+            value="{{ strat.hold }}"
             autofocus=""
           />
         </div>
@@ -48,12 +51,23 @@
             type="text"
             name="sell"
             placeholder="Sell"
+            value="{{ strat.sell }}"
           />
         </div>
       </div>
 
       <button class="button is-block is-info is-large is-fullwidth">
         Edit Strategy
+      </button>
+    </form>
+  </div>
+  <div class="box">
+    <form
+      method="POST"
+      action="{{ url_for('delete_strategy', strat_id=strat._id) }}"
+    >
+      <button class="button is-block is-info is-large is-fullwidth">
+        Delete Strategy
       </button>
     </form>
   </div>

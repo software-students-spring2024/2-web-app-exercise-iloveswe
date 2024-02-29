@@ -2,6 +2,13 @@
 <body>
   <p>Model Placeholder</p>
 
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul class="flashes">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
   <h3 class="title">Create Strategy</h3>
   <div class="box">
     <form method="POST" action="{{ url_for('model', model_id=doc) }}">

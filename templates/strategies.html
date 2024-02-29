@@ -1,5 +1,12 @@
 {% extends "layout.html" %} {% block content %}
 <body>
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul class="flashes">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
   <p>Your Strategies:</p>
   {% for strategy in strategies %}
   <a href="{{ url_for('strategy', strat_id=strategy._id) }}"

@@ -156,17 +156,17 @@ def strategy(strat_id):
     print(strat)
     return render_template("strategy.html", strat=strat)
 
-@app.route('/edit-strategy/<strategy_id>')
-def edit_strategy(strategy_id):
+@app.route('/edit-strategy/<strat_id>')
+def edit_strategy(strat_id):
     """
     Route for GET requests to an edit-strategy page
     """
     #doc = db.csv.find_one({"_id"} ObjectId(post_id))
-    doc = strategy_id
-    return render_template("edit_strategy.html", doc=doc)
+    strat = db.strategies.find_one({"_id": ObjectId(strat_id)})
+    return render_template("edit_strategy.html", strat=strat)
 
-@app.route('/edit-strategy/<strategy_id>', methods=['POST'])
-def edit_strategy_post(strategy_id):
+@app.route('/edit-strategy/<strat_id>', methods=['POST'])
+def edit_strategy_post(strat_id):
     """
     Route for POST requests to a strategy page
     """
@@ -176,9 +176,29 @@ def edit_strategy_post(strategy_id):
     hold = request.form.get('hold')
     sell = request.form.get('sell')
     print(strat_name,buy,hold,sell)
-    #doc = db.csv.find_one({"_id"} ObjectId(strategy_id))
-    doc = strategy_id
-    return redirect("/strategies/"+strategy_id)
+    # update fields
+    strat = db.strategies.find_one({"_id": ObjectId(strat_id)})
+    strat["name"] = strat_name
+    strat["buy"] = buy
+    strat["hold"] = hold
+    strat["sell"] = sell
+    # replace in db
+    result = db.strategies.replace_one({"_id": ObjectId(strat_id)}, strat)
+    print(result)
+    flash(f"{strat['name']} edited")
+    return redirect("/strategy/"+strat_id)
+
+@app.route('/delete-strategy/<strat_id>', methods=['POST'])
+def delete_strategy(strat_id):
+    """
+    Route for POST requests to delete a strategy
+    """
+    strat = db.strategies.find_one({"_id": ObjectId(strat_id)})
+    name = strat["name"]
+    # get strat from database
+    db.strategies.delete_one({"_id": ObjectId(strat_id)})
+    flash(f"{name} Deleted")
+    return redirect("/strategies")
 
 @app.route('/model/<model_id>')
 def model(model_id):
@@ -219,6 +239,7 @@ def model_post(model_id):
         result = users.update_one({"_id": user["_id"]}, {"$set": {"strategies": user["strategies"]}})
         print(result)
 
+    flash("Strategy Created")
     return redirect("/model/"+model_id)
 
 @app.route('/predict', methods=['POST'])
