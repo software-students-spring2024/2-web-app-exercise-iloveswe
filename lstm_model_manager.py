@@ -2,6 +2,8 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Dropout
 from keras.optimizers import Adam
+from lstm_model_manager import create_and_train_lstm_model  # Assuming lstm_model_manager.py contains LSTM model functions
+
 
 def create_lstm_model(input_shape):
     model = Sequential([
