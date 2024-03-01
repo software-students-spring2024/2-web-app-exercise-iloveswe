@@ -109,7 +109,7 @@ def login_post():
     res = login_user(user, remember=remember)
     if(res):
         print("Login Successful")
-        return redirect("/profile")
+        return redirect("/")
     else:
         flash('Please check your login details and try again')
         return redirect('/login')
