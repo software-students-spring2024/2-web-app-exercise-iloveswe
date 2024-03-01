@@ -38,7 +38,12 @@ def load_user(user_id):
     user = User.get_by_id(user_id)
     return user
 
+@login_manager.unauthorized_handler 
+def unauthorized_callback():
+    return redirect(url_for('login'))
+
 @app.route('/')
+@login_required
 def home():
     """
     Route for the home page
@@ -128,6 +133,7 @@ def profile():
     return render_template("profile.html", name=current_user.name)
 
 @app.route('/strategies')
+@login_required
 def strategies():
     """
     Route for GET requests to the strategies page
@@ -148,6 +154,7 @@ def strategies():
     return render_template("strategies.html", strategies = strats)
 
 @app.route('/strategy/<strat_id>')
+@login_required
 def strategy(strat_id):
     """
     Route for GET requests to a strategy page
@@ -157,6 +164,7 @@ def strategy(strat_id):
     return render_template("strategy.html", strat=strat)
 
 @app.route('/edit-strategy/<strat_id>')
+@login_required
 def edit_strategy(strat_id):
     """
     Route for GET requests to an edit-strategy page
@@ -166,6 +174,7 @@ def edit_strategy(strat_id):
     return render_template("edit_strategy.html", strat=strat)
 
 @app.route('/edit-strategy/<strat_id>', methods=['POST'])
+@login_required
 def edit_strategy_post(strat_id):
     """
     Route for POST requests to a strategy page
@@ -189,6 +198,7 @@ def edit_strategy_post(strat_id):
     return redirect("/strategy/"+strat_id)
 
 @app.route('/delete-strategy/<strat_id>', methods=['POST'])
+@login_required
 def delete_strategy(strat_id):
     """
     Route for POST requests to delete a strategy
@@ -201,6 +211,7 @@ def delete_strategy(strat_id):
     return redirect("/strategies")
 
 @app.route('/model/<model_id>')
+@login_required
 def model(model_id):
     """
     Route for GET requests to the model page
@@ -212,6 +223,7 @@ def model(model_id):
     
 
 @app.route('/model/<model_id>', methods=['POST'])
+@login_required
 def model_post(model_id):
     """
     Route for POST requests to the model page
@@ -242,30 +254,13 @@ def model_post(model_id):
     flash("Strategy Created")
     return redirect("/model/"+model_id)
 
-@app.route('/predict', methods=['POST'])
-def predict():
-    data = request.get_json(force=True)
-    
-    # Validate input data (not shown for brevity)
-    
-    # Extract relevant information from the request
-    model_type = data.get('model_type')
-    parameters = data.get('parameters', {})
-    stock_data = pd.DataFrame(data['stock_data'])
-    
-    # Call the model handling function and get the prediction
-    try:
-        prediction_response = get_prediction(model_type, stock_data, parameters)
-        return jsonify({"success": True, "prediction": prediction_response})
-    except Exception as e:
-        return jsonify({"success": False, "error": str(e)})
-    
 @app.route('/about')
 def about():
     """
     Route for the about page
     """
     return render_template("about.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
