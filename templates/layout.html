@@ -42,6 +42,7 @@
       .w3-bar .w3-button {
         padding: 16px;
       }
+      #myNavbar
     </style>
   </head>
 
@@ -50,32 +51,33 @@
       <!-- Navbar (sit on top) -->
       <div class="w3-top">
         <div class="w3-bar w3-white w3-card" id="myNavbar">
-          <a href="{{ url_for('home') }}" class="w3-bar-item w3-button w3-wide"
-            >LOGO</a
-          >
+          <a
+            href="{{ url_for('home') }}"
+            class="w3-bar-item w3-button w3-wide"
+          ><img src="{{ url_for('static', filename='logo.jpeg') }}" style="float:left;width:42px;height:42px;" alt="logo" /></a
           <!-- Right-sided navbar links -->
           <div class="w3-right w3-hide-small">
             {% if current_user.is_authenticated %}
-            <a href="{{ url_for('home') }}" class="w3-bar-item w3-button">
+            <a href="{{ url_for('home') }}" class="w3-bar-item w3-button" style="margin-top:8px;">
               Home
             </a>
-            <a href="{{ url_for('profile') }}" class="w3-bar-item w3-button">
+            <a href="{{ url_for('profile') }}" class="w3-bar-item w3-button" style="margin-top:8px;">
               Profile
             </a>
-            <a href="{{ url_for('logout') }}" class="w3-bar-item w3-button">
+            <a href="{{ url_for('logout') }}" class="w3-bar-item w3-button" style="margin-top:8px;">
               Logout
             </a>
-            <a href="{{ url_for('about') }}" class="w3-bar-item w3-button">
+            <a href="{{ url_for('about') }}" class="w3-bar-item w3-button" style="margin-top:8px;">
               About
             </a>
             {% else %}
-            <a href="{{ url_for('login') }}" class="w3-bar-item w3-button">
+            <a href="{{ url_for('login') }}" class="w3-bar-item w3-button" style="margin-top:8px;">
               Login
             </a>
-            <a href="{{ url_for('register') }}" class="w3-bar-item w3-button">
+            <a href="{{ url_for('register') }}" class="w3-bar-item w3-button" style="margin-top:8px;">
               Sign Up
             </a>
-            <a href="{{ url_for('about') }}" class="w3-bar-item w3-button">
+            <a href="{{ url_for('about') }}" class="w3-bar-item w3-button" style="margin-top:8px;">
               About
             </a>
             {% endif %}
@@ -85,9 +87,10 @@
           <a
             href="javascript:void(0)"
             class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+            style="margin-top:8px;"
             onclick="myFunction()"
           >
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars" style="font-size:large;"></i>
           </a>
         </div>
       </div>
