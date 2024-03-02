@@ -4,95 +4,142 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flask Auth Example</title>
+    <title>Flask Web App</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"
+      href="https://fonts.googleapis.com/css?family=Raleway"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Raleway", sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        line-height: 1.8;
+      }
+
+      /* Full height image header */
+      .bgimg-1 {
+        background-position: center;
+        background-size: cover;
+        background-image: url("/w3images/mac.jpg");
+        min-height: 100%;
+      }
+
+      .w3-bar .w3-button {
+        padding: 16px;
+      }
+    </style>
   </head>
-  <style>
-    @media screen and (max-width: 760px) {
-      .navbar-menu {
-        display: none;
-      }
 
-      .navbar-burger{
-        display: block;
-      }
-
-      .navbar.is-active .navbar-menu{
-        display: block;
-      }
-    }
-  </style>
-
-<body>
-  <section class="hero is-primary is-fullheight">
-    <div class="hero-head">
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="{{ url_for('home') }}">
-              Logo
+  <body>
+    <section class="hero is-primary is-fullheight">
+      <!-- Navbar (sit on top) -->
+      <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+          <a href="{{ url_for('home') }}" class="w3-bar-item w3-button w3-wide"
+            >LOGO</a
+          >
+          <!-- Right-sided navbar links -->
+          <div class="w3-right w3-hide-small">
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('home') }}" class="w3-bar-item w3-button">
+              Home
             </a>
-            <a
-              role="button"
-              class="navbar-burger"
-              aria-label="menu"
-              aria-expanded="false"
-              data-target="navbarMenuHeroA"
-            >
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
+            <a href="{{ url_for('profile') }}" class="w3-bar-item w3-button">
+              Profile
             </a>
+            <a href="{{ url_for('logout') }}" class="w3-bar-item w3-button">
+              Logout
+            </a>
+            <a href="{{ url_for('about') }}" class="w3-bar-item w3-button">
+              About
+            </a>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="w3-bar-item w3-button">
+              Login
+            </a>
+            <a href="{{ url_for('register') }}" class="w3-bar-item w3-button">
+              Sign Up
+            </a>
+            <a href="{{ url_for('about') }}" class="w3-bar-item w3-button">
+              About
+            </a>
+            {% endif %}
           </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
-            <div class="navbar-end">
-              <a href="{{ url_for('home') }}" class="navbar-item"> Home </a>
-              {% if current_user.is_authenticated %}
-              <a href="{{ url_for('profile') }}" class="navbar-item">
-                Profile
-              </a>
-              <a href="{{ url_for('logout') }}" class="navbar-item">
-                Logout
-              </a>
-              {% else %}
-              <a href="{{ url_for('login') }}" class="navbar-item"> Login </a>
-              <a href="{{ url_for('register') }}" class="navbar-item">
-                Sign Up
-              </a>
-              {% endif %}
-            </div>
-          </div>
+          <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+          <a
+            href="javascript:void(0)"
+            class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium"
+            onclick="myFunction()"
+          >
+            <i class="fa fa-bars"></i>
+          </a>
         </div>
-      </nav>
-    </div>
+      </div>
 
-    <div class="hero-body">
-      <div class="container has-text-centered">
+      <!-- Sidebar on small screens when clicking the menu icon -->
+      <nav
+        class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large"
+        style="display: none"
+        id="mySidebar"
+      >
+        <a
+          href="javascript:void(0)"
+          onclick="myFunction()"
+          class="w3-bar-item w3-button w3-large w3-padding-16"
+          >Close ×</a
+        >
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('home') }}" class="w3-bar-item w3-button"> Home </a>
+        <a href="{{ url_for('profile') }}" class="w3-bar-item w3-button">
+          Profile
+        </a>
+        <a href="{{ url_for('logout') }}" class="w3-bar-item w3-button">
+          Logout
+        </a>
+        <a href="{{ url_for('about') }}" class="w3-bar-item w3-button">
+          About
+        </a>
+        {% else %}
+        <a href="{{ url_for('login') }}" class="w3-bar-item w3-button">
+          Login
+        </a>
+        <a href="{{ url_for('register') }}" class="w3-bar-item w3-button">
+          Sign Up
+        </a>
+        <a href="{{ url_for('about') }}" class="w3-bar-item w3-button">
+          About
+        </a>
+        {% endif %}
+      </nav>
+      <div class="w3-container" style="padding: 70px 16px">
         {% block content %} {% endblock %}
       </div>
-    </div>
-  </section>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const $navbarBurgers = Array.prototype.slice.call(
-        document.querySelectorAll('.navbar-burger'),
-        0
-      );
-      if ($navbarBurgers.length > 0) {
-        $navbarBurgers.forEach(($el) => {
-          $el.addEventListener('click', () => {
-            const target = $el.dataset.target;
-            const $target = document.getElementById(target);
-
-            $el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-          });
-        });
+    </section>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("mySidebar");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
       }
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
