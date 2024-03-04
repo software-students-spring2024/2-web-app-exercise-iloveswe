@@ -7,9 +7,17 @@
     {% endfor %}
   </ul>
   {% endif %} {% endwith %}
+  <div class="card" style="margin-top: 30px">
+    <img
+      src="{{ url_for('static', filename=doc.logo) }}"
+      alt="companyLogo"
+      class="logo"
+    />
+  </div>
   <img
-    src=" {{ url_for('static', filename='apple_modelpredVSactual.png') }}"
+    src=" {{ url_for('static', filename=doc.graph) }}"
     alt="graph"
+    class="graph"
   />
   {% for table in tables %} {{titles[loop.index]}} {{ table|safe }} {% endfor %}
   <h3 class="title">Create Strategy</h3>

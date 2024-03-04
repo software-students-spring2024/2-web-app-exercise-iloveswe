@@ -217,11 +217,25 @@ def model(model_id):
     Route for GET requests to the model page
     Displays the model info
     """
-    #doc = db.model.find_one({"_id"} ObjectId(post_id))
-    df = pd.read_csv("./data/NVDA_Predicted_Close.csv")
-    print(df)
-    doc = model_id
-    return render_template("model.html", doc=doc, tables=[df.to_html(classes=["table-bordered", "table-striped", "table-hover", "isi"])], titles=df.columns.values)
+    logo_urls = {
+        "amazon": "logos/amazon.png",
+        "apple": "logos/apple.png",
+        "google": "logos/google.png",
+        "meta": "logos/meta.png",
+        "nvda": "logos/nvda.png"
+    }
+    graph_urls = {
+        "amazon": "graphs/AMZNmodelvsActual.png",
+        "apple": "graphs/apple_modelpredVSactual.png",
+        "google": "graphs/GOOGLEModelVsActual.png",
+        "meta": "graphs/METAModelvsActual.png",
+        "nvda": "graphs/nvdamodelvsactual.png"
+    }
+    logo_url = logo_urls[model_id]
+    graph_url = graph_urls[model_id]
+    doc = {"logo": logo_url, "graph": graph_url, "model": model_id}
+    df = pd.read_csv(f"./data/predictions/{model_id}.csv")
+    return render_template("model.html", doc=doc, tables=[df.to_html(classes=["table-bordered", "table-striped", "table-hover", "table"])], titles=df.columns.values)
     
 
 @app.route('/model/<model_id>', methods=['POST'])
