@@ -218,8 +218,10 @@ def model(model_id):
     Displays the model info
     """
     #doc = db.model.find_one({"_id"} ObjectId(post_id))
+    df = pd.read_csv("./data/NVDA_Predicted_Close.csv")
+    print(df)
     doc = model_id
-    return render_template("model.html", doc=doc)
+    return render_template("model.html", doc=doc, tables=[df.to_html(classes=["table-bordered", "table-striped", "table-hover", "isi"])], titles=df.columns.values)
     
 
 @app.route('/model/<model_id>', methods=['POST'])
