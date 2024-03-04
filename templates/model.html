@@ -22,7 +22,7 @@
   {% for table in tables %} {{titles[loop.index]}} {{ table|safe }} {% endfor %}
   <h3 class="title">Create Strategy</h3>
   <div class="box">
-    <form method="POST" action="{{ url_for('model', model_id=doc) }}">
+    <form method="POST" action="{{ url_for('model', model_id=doc.model) }}">
       <div class="field">
         <div class="control">
           <input

@@ -277,6 +277,14 @@ def about():
     """
     return render_template("about.html")
 
+# route to handle any errors
+@app.errorhandler(Exception)
+def handle_error(e):
+    """
+    Output any errors
+    """
+    return render_template("error.html", error=e)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

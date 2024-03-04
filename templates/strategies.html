@@ -7,11 +7,20 @@
     {% endfor %}
   </ul>
   {% endif %} {% endwith %}
-  <p>Your Strategies:</p>
-  {% for strategy in strategies %}
-  <a href="{{ url_for('strategy', strat_id=strategy._id) }}"
-    >{{ strategy.name }}</a
-  >
-  {% endfor %}
+  <div class="container">
+    <input
+      id="searchbar"
+      onkeyup="search_strategy()"
+      type="text"
+      name="search"
+      placeholder="Search strategies.."
+    />
+    <p>Your Strategies:</p>
+    {% for strategy in strategies %}
+    <a href="{{ url_for('strategy', strat_id=strategy._id) }}" class="strategy"
+      >{{ strategy.name }}</a
+    >
+    {% endfor %}
+  </div>
 </body>
 {% endblock %}
