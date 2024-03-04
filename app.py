@@ -141,7 +141,6 @@ def strategies():
     """
     user_email = current_user.email
     user = db.users.find_one({"email": user_email})
-    print(user)
     strats = []
     try:
         strategy_ids = user["strategies"]
@@ -150,7 +149,6 @@ def strategies():
             strats.append(strat)
     except:
         print('No strats')
-    
     return render_template("strategies.html", strategies = strats)
 
 @app.route('/strategy/<strat_id>')
@@ -206,7 +204,8 @@ def delete_strategy(strat_id):
     strat = db.strategies.find_one({"_id": ObjectId(strat_id)})
     name = strat["name"]
     # get strat from database
-    db.strategies.delete_one({"_id": ObjectId(strat_id)})
+    r = db.strategies.delete_one({"_id": ObjectId(strat_id)})
+    print(r)
     flash(f"{name} Deleted")
     return redirect("/strategies")
 

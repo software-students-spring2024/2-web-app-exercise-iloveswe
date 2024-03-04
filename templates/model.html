@@ -1,12 +1,5 @@
 {% extends "layout.html" %} {% block content %}
 <body>
-  {% with messages = get_flashed_messages() %} {% if messages %}
-  <ul class="flashes">
-    {% for message in messages %}
-    <li>{{ message }}</li>
-    {% endfor %}
-  </ul>
-  {% endif %} {% endwith %}
   <div class="card" style="margin-top: 30px">
     <img
       src="{{ url_for('static', filename=doc.logo) }}"
@@ -22,6 +15,13 @@
   {% for table in tables %} {{titles[loop.index]}} {{ table|safe }} {% endfor %}
   <h3 class="title">Create Strategy</h3>
   <div class="box">
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
     <form method="POST" action="{{ url_for('model', model_id=doc.model) }}">
       <div class="field">
         <div class="control">
@@ -30,7 +30,6 @@
             type="text"
             name="strategy-name"
             placeholder="Strategy Name"
-            autofocus=""
           />
         </div>
       </div>
@@ -41,7 +40,6 @@
             type="text"
             name="buy"
             placeholder="Buy"
-            autofocus=""
           />
         </div>
       </div>
@@ -53,7 +51,6 @@
             type="text"
             name="hold"
             placeholder="Hold"
-            autofocus=""
           />
         </div>
       </div>
