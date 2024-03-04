@@ -7,7 +7,7 @@
     {% endfor %}
   </ul>
   {% endif %} {% endwith %}
-  <p>Your Strategies:</p>
+  <h3>Your Strategies:</h3>
   {% for strategy in strategies %} {% if strategy.name %}
   <li>
     <a href="{{ url_for('strategy', strat_id=strategy._id) }}"
