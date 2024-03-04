@@ -206,7 +206,7 @@ def delete_strategy(strat_id):
     # get strat from database
     r = db.strategies.delete_one({"_id": ObjectId(strat_id)})
     print(r)
-    flash(f"{name} Deleted")
+    flash(f"{name} deleted.")
     return redirect("/strategies")
 
 @app.route('/model/<model_id>')
@@ -234,6 +234,23 @@ def model(model_id):
     graph_url = graph_urls[model_id]
     doc = {"logo": logo_url, "graph": graph_url, "model": model_id}
     df = pd.read_csv(f"./data/predictions/{model_id}.csv")
+    
+    # def color_row(val):
+    #     max_val = df['Predicted_Close'].max()
+    #     min_val = df['Predicted_Close'].min()
+    #     ratio = (val - min_val) / (max_val - min_val)
+    #     red = int(255 * (1 - ratio))
+    #     green = int(255 * ratio)
+    # return f'background-color: rgb({red}, {green}, 0);'
+
+    # def make_pretty(styler):
+    #     styler.set_caption("Weather Conditions")
+    #     styler.format(rain_condition)
+    #     styler.format_index(lambda v: v.strftime("%A"))
+    #     styler.background_gradient(axis=None, vmin=1, vmax=5, cmap="YlGnBu")
+    #     return styler
+    
+    # df_styled = df.style.background_gradient(subset=["Predicted Close"], cmap="RdYlGn")
     return render_template("model.html", doc=doc, tables=[df.to_html(classes=["table-bordered", "table-striped", "table-hover", "table"])], titles=df.columns.values)
     
 
@@ -266,7 +283,7 @@ def model_post(model_id):
         result = users.update_one({"_id": user["_id"]}, {"$set": {"strategies": user["strategies"]}})
         print(result)
 
-    flash("Strategy Created")
+    flash(strat_name + " added to strategies.")
     return redirect("/model/"+model_id)
 
 @app.route('/about')
