@@ -3,7 +3,7 @@
 A little exercise to build a web application following an agile development process. See the [instructions](instructions.md) for more detail.
 
 ## Product vision statement
-ModelPy serves to empower investors with a choice-driven platform that offers dual model stock predictions, enabling informed buy, sell, or hold decisions with precision and confidence
+ModelPy serves to empower investors with a choice-driven platform that offers model stock predictions, enabling informed buy, sell, or hold decisions with precision and confidence.
 
 ## User stories
 
