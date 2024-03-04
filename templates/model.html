@@ -1,7 +1,5 @@
 {% extends "layout.html" %} {% block content %}
 <body>
-  <a href="" class="logo-link"><img src="../static/{{ logo_url }}" alt="" class="logo"></a>
-
   {% with messages = get_flashed_messages() %} {% if messages %}
   <ul class="flashes">
     {% for message in messages %}
@@ -9,6 +7,19 @@
     {% endfor %}
   </ul>
   {% endif %} {% endwith %}
+  <div class="card" style="margin-top: 30px">
+    <img
+      src="{{ url_for('static', filename=doc.logo) }}"
+      alt="companyLogo"
+      class="logo"
+    />
+  </div>
+  <img
+    src=" {{ url_for('static', filename=doc.graph) }}"
+    alt="graph"
+    class="graph"
+  />
+  {% for table in tables %} {{titles[loop.index]}} {{ table|safe }} {% endfor %}
   <h3 class="title">Create Strategy</h3>
   <div class="box">
     <form method="POST" action="{{ url_for('model', model_id=doc) }}">
