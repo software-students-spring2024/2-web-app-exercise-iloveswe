@@ -8,10 +8,12 @@
   </ul>
   {% endif %} {% endwith %}
   <p>Your Strategies:</p>
-  {% for strategy in strategies %}
-  <a href="{{ url_for('strategy', strat_id=strategy._id) }}"
-    >{{ strategy.name }}</a
-  >
-  {% endfor %}
+  {% for strategy in strategies %} {% if strategy.name %}
+  <li>
+    <a href="{{ url_for('strategy', strat_id=strategy._id) }}"
+      >{{ strategy.name }}</a
+    >
+  </li>
+  {% endif %} {% endfor %}
 </body>
 {% endblock %}

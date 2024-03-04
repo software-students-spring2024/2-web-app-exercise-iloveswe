@@ -6,6 +6,8 @@ get_flashed_messages() %} {% if messages %}
   {% endfor %}
 </ul>
 {% endif %} {% endwith %}
+<br />
+<a href="{{ url_for('strategies') }}">Back to your stratgies</a>
 <h3>Strategy: {{ strat.name }}</h3>
 <h4>Buy: {{ strat.buy }}</h4>
 <h4>Hold: {{ strat.sell }}</h4>
