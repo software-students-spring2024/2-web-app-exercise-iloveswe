@@ -1,3 +1,16 @@
+<head>
+  <style>
+    .flashes p {
+      background-color: #f2f4f6; 
+      border: 1px solid #ddd; 
+      padding: 1vh; 
+      border-radius: 0.5vh; 
+      display: inline-block; 
+      text-align: left; 
+      margin: 0vh 0vh 1.5vh;
+    }
+  </style>
+</head>
 {% extends "layout.html" %} {% block content %}
 <body>
   <div class="card" style="margin-top: 30px">
@@ -13,14 +26,18 @@
     class="graph"
   />
   {% for table in tables %} {{titles[loop.index]}} {{ table|safe }} {% endfor %}
+  <h3 class="title">Predicted Closing Prices</h3>
+  <div class="box">
+    {{ df_html|safe }} <!-- Insert the HTML representation of the styled DataFrame here -->
+  </div>
   <h3 class="title">Create Strategy</h3>
   <div class="box">
     {% with messages = get_flashed_messages() %} {% if messages %}
-    <ul class="flashes">
+    <div class="flashes">
       {% for message in messages %}
-      <li>{{ message }}</li>
+      <p>{{ message }}</p>
       {% endfor %}
-    </ul>
+    </div>
     {% endif %} {% endwith %}
     <form method="POST" action="{{ url_for('model', model_id=doc.model) }}">
       <div class="field">
