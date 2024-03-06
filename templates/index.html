@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="logos-container">
+  <h1 class="title">Welcome {{ name }}</h1>
+  <p class="subtitle">Explore Our Models</p>
+  <div class="logos-grid">
+    <div class="card">
+      <a href="{{ url_for('model', model_id="amazon") }}" class="logo-link"><img src="../static/logos/amazon.png" alt="Amazon Logo" class="logo"></a>
+    </div>
+    <div class="card">
+      <a href="{{ url_for('model', model_id="apple") }}" class="logo-link"><img src="../static/logos/apple.png" alt="Apple Logo" class="logo"></a>
+    </div>
+    <div class="card">
+      <a href="{{ url_for('model', model_id="google") }}" class="logo-link"><img src="../static/logos/google.png" alt="Google Logo" class="logo"></a>
+    </div>
+    <div class="card">
+      <a href="{{ url_for('model', model_id="meta") }}" class="logo-link"><img src="../static/logos/meta.png" alt="Meta Logo" class="logo"></a>
+    </div>
+    <div class="card">
+      <a href="{{ url_for('model', model_id="nvda") }}" class="logo-link"><img src="../static/logos/nvda.png" alt="Nvidia Logo" class="logo"></a>
+    </div>
+  </div>
+</div>
+{% endblock %}
